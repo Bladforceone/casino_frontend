@@ -1,0 +1,122 @@
+.reel-container {
+  width: 120px;
+  height: 340px;
+  background: linear-gradient(180deg, 
+    rgba(0, 0, 0, 0.4) 0%, 
+    rgba(0, 0, 0, 0.2) 50%, 
+    rgba(0, 0, 0, 0.4) 100%);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.reel-container::before,
+.reel-container::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 30px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.reel-container::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.reel-container::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.reel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reel-symbol {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.reel-spinning {
+  animation: spin-reel 0.04s linear infinite;
+}
+
+.reel-spinning.turbo {
+  animation: spin-reel 0.01s linear infinite;
+}
+
+.reel-spinning .reel-symbol {
+  filter: blur(3px) brightness(1.1);
+  opacity: 0.9;
+}
+
+@keyframes spin-reel {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(108px); /* высота символа + gap - теперь вниз */
+  }
+
+}
+
+/* Эффект остановки с отскоком */
+.reel:not(.reel-spinning) {
+  animation: stop-bounce 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes stop-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .reel-container {
+    width: 75px;
+    height: 210px;
+  }
+
+  .reel {
+    padding: 5px;
+    gap: 4px;
+  }
+
+  .reel-symbol {
+    width: 60px;
+    height: 60px;
+  }
+
+  @keyframes spin-reel {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(64px); /* высота символа + gap для мобильных - теперь вниз */
+    }
+  }
+}
+
+
+

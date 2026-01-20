@@ -1,0 +1,157 @@
+.cascade-info-panel {
+  left: -250px;
+  top: 35%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  width: 280px;
+  color: white;
+  z-index: 10;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.info-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.info-value.balance {
+  color: #4ade80;
+}
+
+.info-value.win {
+  color: #fbbf24;
+  animation: pulse 1s ease-in-out;
+}
+
+.info-value.total {
+  color: #60a5fa;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.bonus-indicator {
+  padding: 15px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border-radius: 10px;
+  text-align: center;
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.8);
+  }
+}
+
+.bonus-badge {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.free-spins {
+  font-size: 1rem;
+}
+
+.scatter-info {
+  padding: 12px;
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 10px;
+  border: 2px solid rgba(139, 92, 246, 0.5);
+}
+
+.scatter-badge {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.free-spins-awarded {
+  font-size: 0.9rem;
+  color: #fbbf24;
+}
+
+.cascade-info {
+  padding: 12px;
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 10px;
+  border: 2px solid rgba(59, 130, 246, 0.5);
+}
+
+.cascade-badge {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.cluster-info {
+  font-size: 0.9rem;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cluster-info:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 1200px) {
+  .cascade-info-panel {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cascade-info-panel {
+    padding: 15px;
+    max-width: 100%;
+  }
+  
+  .info-value {
+    font-size: 1rem;
+  }
+  
+  .bonus-badge {
+    font-size: 1rem;
+  }
+}
+

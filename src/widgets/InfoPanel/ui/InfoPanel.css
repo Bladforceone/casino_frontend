@@ -1,0 +1,128 @@
+.info-panel {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  align-content: center;
+}
+
+.info-section {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+.info-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+}
+
+.info-value.balance {
+  color: #4ECDC4;
+}
+
+.info-value.win {
+  color: #FFD700;
+  animation: glow 1s ease-in-out infinite;
+}
+
+.info-value.total {
+  color: #98D8C8;
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  }
+}
+
+.bonus-indicator {
+  text-align: center;
+  margin: 20px 0;
+  padding: 15px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 10px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.bonus-badge {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.free-spins {
+  font-size: 18px;
+  color: white;
+  margin-top: 8px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.winning-info {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.winning-title {
+  font-size: 18px;
+  color: #FFD700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.winning-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.winning-line {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .info-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+

@@ -1,0 +1,344 @@
+.cascade-game-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+  color: #0b0b0f;
+  --jojo-purple: #7c3aed;
+  --jojo-pink: #ec4899;
+  --jojo-gold: #fbbf24;
+  --jojo-ink: #000000;
+  --jojo-paper: #fff9f2;
+  --jojo-blue: #f59e0b;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.game-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--jojo-blue);
+  margin: 0;
+  text-shadow: 
+    0 0 20px rgba(245, 158, 11, 0.8),
+    0 0 40px rgba(245, 158, 11, 0.6),
+    2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: title-glow 2s ease-in-out infinite;
+}
+
+@keyframes title-glow {
+  0%, 100% {
+    text-shadow: 
+      0 0 20px rgba(245, 158, 11, 0.8),
+      0 0 40px rgba(245, 158, 11, 0.6),
+      2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow: 
+      0 0 30px rgba(251, 191, 36, 1),
+      0 0 60px rgba(251, 191, 36, 0.8),
+      2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.info-button,
+.online-button {
+  padding: 10px 20px;
+}
+
+.back-menu-button {
+  padding: 10px 20px;
+}
+
+.game-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.game-content-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.game-center-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  align-items: center;
+}
+
+.paytable-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.paytable-modal {
+  background: white;
+  border-radius: 15px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.paytable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.paytable-header h2 {
+  margin: 0;
+  color: #1f2937;
+}
+
+.paytable-content {
+  padding: 20px;
+  color: #374151;
+}
+
+.paytable-content h3 {
+  color: #1f2937;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.paytable-content h3:first-child {
+  margin-top: 0;
+}
+
+.paytable-content ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.paytable-content li {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.user-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 20px;
+  color: white;
+}
+
+.mode-indicator {
+  display: flex;
+  align-items: center;
+}
+
+.mode-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.mode-badge.online {
+  background: rgba(34, 197, 94, 0.3);
+  border: 2px solid #22c55e;
+}
+
+.mode-badge.offline {
+  background: rgba(107, 114, 128, 0.3);
+  border: 2px solid #6b7280;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-email {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.user-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-deposit,
+.btn-logout,
+.btn-login {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-deposit {
+  background: rgba(34, 197, 94, 0.3);
+  color: white;
+  border: 2px solid #22c55e;
+}
+
+.btn-deposit:hover {
+  background: rgba(34, 197, 94, 0.5);
+}
+
+.btn-logout,
+.btn-login {
+  background: rgba(239, 68, 68, 0.3);
+  color: white;
+  border: 2px solid #ef4444;
+}
+
+.btn-logout:hover,
+.btn-login:hover {
+  background: rgba(239, 68, 68, 0.5);
+}
+
+.deposit-form {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 20px;
+  color: white;
+}
+
+.deposit-form h3 {
+  margin: 0 0 15px 0;
+  color: white;
+}
+
+.deposit-form input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.deposit-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.deposit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-confirm,
+.btn-cancel {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-confirm {
+  background: rgba(34, 197, 94, 0.3);
+  color: white;
+  border: 2px solid #22c55e;
+}
+
+.btn-confirm:hover {
+  background: rgba(34, 197, 94, 0.5);
+}
+
+.btn-cancel {
+  background: rgba(107, 114, 128, 0.3);
+  color: white;
+  border: 2px solid #6b7280;
+}
+
+.btn-cancel:hover {
+  background: rgba(107, 114, 128, 0.5);
+}
+
+@media (max-width: 768px) {
+  .game-title {
+    font-size: 1.5rem;
+  }
+  
+  .game-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .header-buttons {
+    flex-direction: column;
+  }
+  
+  .paytable-modal {
+    max-width: 100%;
+    margin: 10px;
+  }
+  
+  .user-panel {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .user-info {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .user-actions {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Предотвращаем смещение экрана при клике на кнопки */
+html {
+  scroll-behavior: auto;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+button {
+  scroll-margin: 0 !important;
+  scroll-padding: 0 !important;
+  outline: none !important;
+}
+
+button:focus {
+  scroll-margin: 0 !important;
+  scroll-padding: 0 !important;
+  outline: none !important;
+}
+
+button:focus-visible {
+  scroll-margin: 0 !important;
+  scroll-padding: 0 !important;
+  outline: none !important;
+}
+
+button:active {
+  scroll-margin: 0 !important;
+  scroll-padding: 0 !important;
+  outline: none !important;
+}
+
+/* Отключаем скролл при фокусе на интерактивных элементах */
+*:focus {
+  scroll-margin: 0 !important;
+  scroll-padding: 0 !important;
+}
+
+*:focus-visible {
+  scroll-margin: 0 !important;
+  scroll-padding: 0 !important;
+}
+
+/* Предотвращаем скролл при клике */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Отключаем автоматический скролл к элементам при фокусе */
+:focus {
+  scroll-margin-block: 0 !important;
+  scroll-margin-inline: 0 !important;
+  scroll-padding-block: 0 !important;
+  scroll-padding-inline: 0 !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+

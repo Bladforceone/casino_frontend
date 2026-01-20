@@ -1,0 +1,36 @@
+.spinning-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.spin-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 50px,
+    rgba(255, 255, 255, 0.05) 50px,
+    rgba(255, 255, 255, 0.05) 51px
+  );
+  animation: scan-lines 0.08s linear infinite;
+}
+
+@keyframes scan-lines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-51px);
+  }
+}
+

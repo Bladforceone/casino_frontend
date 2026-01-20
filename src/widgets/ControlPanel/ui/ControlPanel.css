@@ -1,0 +1,96 @@
+.control-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.bet-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bet-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.bet-display {
+  min-width: 80px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+  max-width: 120px;
+}
+
+.spin-button,
+.turbo-button,
+.bonus-button {
+  width: 100%;
+  min-height: 60px;
+  font-size: 16px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spin-button {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.bonus-button {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .control-panel {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 20px;
+  }
+  
+  .bet-controls {
+    width: 100%;
+  }
+  
+  .bet-buttons {
+    width: 100%;
+  }
+  
+  .spin-button,
+  .turbo-button,
+  .bonus-button {
+    width: 100%;
+    min-height: 50px;
+  }
+}
+

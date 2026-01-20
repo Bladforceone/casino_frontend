@@ -1,0 +1,116 @@
+.win-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.win-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: win-pop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.win-label {
+  font-size: 48px;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(255, 215, 0, 0.6),
+    0 0 30px rgba(255, 215, 0, 0.4),
+    3px 3px 6px rgba(0, 0, 0, 0.8);
+  animation: win-glow 0.3s ease-in-out infinite alternate;
+}
+
+.win-amount {
+  font-size: 64px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 215, 0, 0.6),
+    3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes win-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes win-glow {
+  0% {
+    text-shadow: 
+      0 0 10px rgba(255, 215, 0, 0.8),
+      0 0 20px rgba(255, 215, 0, 0.6),
+      0 0 30px rgba(255, 215, 0, 0.4),
+      3px 3px 6px rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    text-shadow: 
+      0 0 20px rgba(255, 215, 0, 1),
+      0 0 30px rgba(255, 215, 0, 0.8),
+      0 0 40px rgba(255, 215, 0, 0.6),
+      3px 3px 6px rgba(0, 0, 0, 0.8);
+  }
+}
+
+.win-particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #FFD700, #FFA500);
+  border-radius: 50%;
+  animation: particle-burst 1s ease-out forwards;
+  animation-delay: var(--delay);
+  transform-origin: center;
+}
+
+@keyframes particle-burst {
+  0% {
+    transform: rotate(var(--angle)) translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--angle)) translateX(150px) scale(0);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .win-label {
+    font-size: 32px;
+  }
+
+  .win-amount {
+    font-size: 48px;
+  }
+
+  @keyframes particle-burst {
+    100% {
+      transform: rotate(var(--angle)) translateX(100px) scale(0);
+    }
+  }
+}
+
