@@ -1,13 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { CascadeBoard } from '@widgets/CascadeBoard';
-import { CasinoControlPanel } from '@widgets/CasinoControlPanel';
-import { CascadeInfoPanel } from '@widgets/CascadeInfoPanel';
 import { BonusActivationAnimation } from '@widgets/BonusActivationAnimation';
 import { Button } from '@shared/ui/Button';
 import { useCascadeGameStore } from '@entities/cascade/model/store';
 import { useAuthStore } from '@features/auth';
 import { AuthModal } from '@features/auth';
 import './CascadeGamePage.css';
+import {CascadeControlPanel} from "@widgets/CascadeControlPanel";
 
 export const CascadeGamePage: React.FC = () => {
   const [isPaytableOpen, setIsPaytableOpen] = useState(false);
@@ -190,7 +189,7 @@ export const CascadeGamePage: React.FC = () => {
         <div className="game-content-wrapper">
           <div className="game-center-content">
             <CascadeBoard />
-            <CasinoControlPanel
+            <CascadeControlPanel
           bet={bet}
           balance={balance}
           isSpinning={isSpinning}

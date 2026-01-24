@@ -22,7 +22,7 @@ interface CascadeGameStore extends CascadeGameState {
   nextCascadeStep: () => void;
   finishCascadeAnimation: () => void;
   updateBoardAfterCascade: (newBoard: number[][]) => void;
-  validateFinalBoard: () => boolean; // Проверка соответствия доски финальной доске
+  validateFinalBoard: () => boolean;// Проверка соответствия доски финальной доске
 }
 
 const BOARD_SIZE = 7;
