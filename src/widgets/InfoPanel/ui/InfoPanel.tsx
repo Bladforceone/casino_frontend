@@ -6,8 +6,6 @@ export const InfoPanel: React.FC = () => {
   const { 
     balance, 
     lastWin,
-    isBonusGame,
-    freeSpinsLeft,
   } = useGameStore();
 
   return (
@@ -26,19 +24,6 @@ export const InfoPanel: React.FC = () => {
         </div>
 
       </div>
-
-      {isBonusGame && (
-        <div className="bonus-indicator">
-          <div className="bonus-badge">
-            🎁 БОНУСНАЯ ИГРА
-          </div>
-          <div className="free-spins">
-            Осталось фриспинов: {freeSpinsLeft}
-          </div>
-        </div>
-      )}
-
-
     </div>
   );
 };

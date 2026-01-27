@@ -141,13 +141,7 @@ export const CasinoControlPanel: React.FC<CasinoControlPanelProps> = ({
         disabled={!canSpin}
         title={isSpinning ? 'Вращение...' : isResolving ? 'Каскад...' : isBonusGame ? `Фриспин (${freeSpinsLeft})` : 'Крутить'}
       >
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-          <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-        </svg>
-        <span className="button-label">
-          {isSpinning ? 'Вращение...' : isResolving ? 'Каскад...' : isBonusGame ? `Фриспин (${freeSpinsLeft})` : 'Крутить'}
-        </span>
+          <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/play.png" alt="play"/>
       </button>
 
       {/* Кнопка турбо */}

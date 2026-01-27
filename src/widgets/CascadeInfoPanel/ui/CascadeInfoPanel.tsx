@@ -6,8 +6,6 @@ export const CascadeInfoPanel: React.FC = () => {
   const { 
     balance, 
     lastWin,
-    isBonusGame,
-    freeSpinsLeft,
   } = useCascadeGameStore();
 
     return (
@@ -24,20 +22,7 @@ export const CascadeInfoPanel: React.FC = () => {
             {lastWin.toFixed(2)}
           </span>
                 </div>
-
             </div>
-
-            {isBonusGame && (
-                <div className="bonus-indicator">
-                    <div className="bonus-badge">
-                        🎁 БОНУСНАЯ ИГРА
-                    </div>
-                    <div className="free-spins">
-                        Осталось фриспинов: {freeSpinsLeft}
-                    </div>
-                </div>
-            )}
-
         </div>
     );
 };
