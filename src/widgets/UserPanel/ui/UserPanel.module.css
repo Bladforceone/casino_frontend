@@ -45,9 +45,18 @@
 }
 
 .user-email {
-  color: #ffd700;
-  font-weight: 600;
-  font-size: 14px;
+    font-weight: 900;
+    padding: 5px;
+    border-radius: 7px;
+    border: 3px solid;
+    box-shadow: 4px 3px;
+    font-family: 'Rubik One', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #c50b9b 33%, #730dbc 66%, #8AA9D6);
+    -webkit-background-clip: text;
+    color: #610960;
+
 }
 
 .user-actions {
@@ -223,3 +232,8 @@
   }
 }
 
+@media (max-width: 480px) {
+    .btn-register, .btn-login{
+        font-size: 12px !important;
+    }
+}

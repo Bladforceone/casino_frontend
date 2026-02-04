@@ -337,4 +337,11 @@
   }
 }
 
+@media (max-width: 480px) {
+    .brand-name, .top-nav-link {
+        font-size: 12px;
+    }
+
+}
+
 

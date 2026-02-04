@@ -40,6 +40,13 @@
   animation: title-glow 2s ease-in-out infinite;
 }
 
+.menu-and-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
 @keyframes title-glow {
   0%, 100% {
     text-shadow: 
@@ -342,3 +349,35 @@
   }
 }
 
+@media (max-width: 480px) {
+    .game-center-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 70%;
+        max-width: 900px;
+        align-items: center;
+    }
+    .game-header {
+        width: 70%;
+        flex-direction: column;
+        align-items: stretch;
+        align-self: center;
+    }
+    .menu-and-title {
+        display: flow;
+    }
+    .game-title {
+        font-size: 1.1rem;
+    }
+    .header-buttons {
+        flex-direction: row;
+    }
+    .info-button, .online-button {
+        min-width: 50px;
+        font-size: 12px;
+    }
+    .back-menu-button {
+        font-size: 12px;
+    }
+}

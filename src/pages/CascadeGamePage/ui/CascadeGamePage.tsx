@@ -100,7 +100,7 @@ export const CascadeGamePage: React.FC = () => {
     <div className="cascade-game-page">
       <BonusActivationAnimation show={showBonusOverlay} text="БОНУСНАЯ ИГРА" />
       <header className="game-header">
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+        <div className={"menu-and-title"}>
           <Button
             onClick={() => { window.location.hash = '#/games'; }}
             variant="secondary"

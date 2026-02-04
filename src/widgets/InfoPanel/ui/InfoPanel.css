@@ -128,3 +128,22 @@
         font-size: 14px;
     }
 }
+
+@media (max-width: 480px) {
+    .info-item {
+        padding: 0;
+    }
+
+    .info-label {
+        font-size: 8px;
+    }
+
+    .info-value {
+        font-size: 10px;
+    }
+
+    .info-section {
+        gap: 5px;
+        padding: 5px;
+    }
+}

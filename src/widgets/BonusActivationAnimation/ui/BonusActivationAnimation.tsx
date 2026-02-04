@@ -33,7 +33,7 @@ export const BonusActivationAnimation: React.FC<BonusActivationAnimationProps> =
       <div className="bonus-activation-content">
         <div className="bonus-activation-sparkles" />
         <div className="bonus-activation-title">{text}</div>
-        <div className="bonus-activation-subtitle">Бесплатные вращения активированы</div>
+        <div className="bonus-activation-subtitle">Бесплатные вращения активированы </div>
       </div>
     </div>
   );

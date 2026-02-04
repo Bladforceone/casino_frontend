@@ -1,0 +1,13 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # Передаём переменные из .env в сборку (Vite подставляет их на этапе build)
+      args:
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:8080}
+    ports:
+      - "3000:80"
+    # Опционально: подхватить .env для других переменных в будущем
+    env_file:
+      - .env
