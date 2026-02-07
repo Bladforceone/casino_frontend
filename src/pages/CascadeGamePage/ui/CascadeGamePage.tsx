@@ -17,20 +17,11 @@ export const CascadeGamePage: React.FC = () => {
   const { 
     useOnlineMode, 
     setOnlineMode, 
-    syncBalance, 
-    isResolving, 
-    deposit, 
-    isTurbo,
-    bet,
-    balance,
-    isSpinning,
+    syncBalance,
+    deposit,
     isBonusGame,
     freeSpinsLeft,
     awardedFreeSpins,
-    spin,
-    setBet,
-    buyBonus,
-    setTurbo,
   } = useCascadeGameStore();
   const { isAuthenticated} = useAuthStore();
 
@@ -155,22 +146,7 @@ export const CascadeGamePage: React.FC = () => {
         <div className="game-content-wrapper">
           <div className="game-center-content">
             <CascadeBoard />
-            <CascadeControlPanel
-          bet={bet}
-          balance={balance}
-          isSpinning={isSpinning}
-          isResolving={isResolving}
-          isBonusGame={isBonusGame}
-          freeSpinsLeft={freeSpinsLeft}
-          isTurbo={isTurbo}
-          onSpin={spin}
-          onBetIncrease={() => setBet(bet + 2)}
-          onBetDecrease={() => setBet(bet - 2)}
-          onTurboToggle={() => setTurbo(!isTurbo)}
-          onBuyBonus={buyBonus}
-          minBet={2}
-          maxBet={1000}
-            />
+            <CascadeControlPanel/>
           </div>
         </div>
       </main>

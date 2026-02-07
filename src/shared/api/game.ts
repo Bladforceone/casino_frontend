@@ -1,5 +1,5 @@
 import { apiClient } from './client';
-import { SpinRequest, SpinResult, ErrorResponse, BuyBonusRequest, SimpleResponse } from './types';
+import { SpinRequest, SpinResult, ErrorResponse, BuyBonusRequest } from './types';
 import { AxiosError } from 'axios';
 import { Symbol, SymbolType, WinningLine } from '@shared/types/game';
 import { PAYLINES } from '@shared/config/lines';
