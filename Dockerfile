@@ -3,29 +3,32 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Копируем файлы зависимостей
+# Копируем package.json и package-lock.json
 COPY package.json package-lock.json ./
 
 # Устанавливаем зависимости
 RUN npm ci
 
-# Копируем исходный код
+# Копируем весь исходный код
 COPY . .
 
-# ARG для передачи VITE_API_URL при сборке (из .env через docker-compose или --build-arg)
-ARG VITE_API_URL=http://localhost:8080
+# ARG для передачи VITE_API_URL при сборке
+ARG VITE_API_URL=http://158.160.167.237:8080
 ENV VITE_API_URL=$VITE_API_URL
 
-# Сборка приложения (Vite подставит VITE_API_URL в бандл)
+# Создаем .env для Vite на основе переданного ARG
+RUN echo "VITE_API_URL=$VITE_API_URL" > .env
+
+# Собираем приложение (Vite подставит VITE_API_URL в бандл)
 RUN npm run build
 
 # Продакшен: раздача статики через nginx
 FROM nginx:alpine AS app
 
-# Копируем собранное приложение из builder
+# Копируем собранное приложение
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Базовая конфигурация nginx для SPA
+# Конфигурация nginx для SPA
 RUN echo 'server { \
     listen 80; \
     root /usr/share/nginx/html; \
